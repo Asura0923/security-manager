@@ -1,0 +1,30 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sunyu.demo.security.manager.mapper.SecurityRoleMapper">
+    <insert id="addRoleResourceJoin">
+        INSERT INTO security_role_resource (`role_id`, `resource_id`) VALUES (#{roleId}, #{resourceId})
+    </insert>
+    <delete id="deleteRoleResourceJoinByResourceId">
+        delete from security_role_resource where resource_id = #{resourceId}
+    </delete>
+    <delete id="deleteUserRoleJoinByUserId">
+        delete from security_user_role where user_id = #{userId}
+    </delete>
+    <delete id="deleteRoleResourceJoinByRoleId">
+        delete from security_role_resource where role_id = #{roleId}
+    </delete>
+    <delete id="deleteUserRoleJoinByRoleId">
+        delete from security_user_role where role_id = #{roleId}
+    </delete>
+    <select id="getRoleByUserJoinRole" resultType="sunyu.demo.security.manager.pojo.SecurityRole">
+        SELECT
+        security_role.*
+        FROM
+        security_role security_role
+        JOIN security_user_role security_user_role ON security_user_role.role_id = security_role.id
+        <where>
+            <if test="securityUser.id != null">
+                and security_user_role.user_id = #{securityUser.id}
+            </if>
+        </where>
+    </select>
+</mapper>

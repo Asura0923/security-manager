@@ -1,0 +1,24 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sunyu.demo.security.manager.mapper.SecurityUserMapper">
+    <insert id="addUserResourceJoin">
+        INSERT INTO security_user_resource (`user_id`, `resource_id`) VALUES (#{userId}, #{resourceId})
+    </insert>
+    <insert id="addUserGroupJoin">
+        INSERT INTO security_user_group (`user_id`, `group_id`) VALUES (#{userId}, #{groupId})
+    </insert>
+    <insert id="addUserRoleJoin">
+        INSERT INTO security_user_role (`user_id`, `role_id`) VALUES (#{userId}, #{roleId})
+    </insert>
+    <delete id="deleteUserResourceJoinByUserId">
+        delete from security_user_resource where user_id = #{userId}
+    </delete>
+    <delete id="deleteUserResourceJoinByResourceId">
+        delete from security_user_resource where resource_id = #{resourceId}
+    </delete>
+    <delete id="deleteUserGroupJoinByUserId">
+        delete from security_user_group where user_id = #{userId}
+    </delete>
+    <delete id="deleteUserRoleJoinByUserId">
+        delete from security_user_role where user_id = #{userId}
+    </delete>
+</mapper>

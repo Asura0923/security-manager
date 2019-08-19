@@ -1,0 +1,4 @@
+.dataTable {
+    word-break: keep-all;
+    white-space: nowrap;
+}

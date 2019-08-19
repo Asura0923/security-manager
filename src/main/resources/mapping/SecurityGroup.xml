@@ -1,0 +1,30 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sunyu.demo.security.manager.mapper.SecurityGroupMapper">
+    <insert id="addGroupResourceJoin">
+        INSERT INTO security_group_resource (`group_id`, `resource_id`) VALUES (#{groupId}, #{resourceId})
+    </insert>
+    <delete id="deleteGroupResourceJoinByResourceId">
+        delete from security_group_resource where resource_id = #{resourceId}
+    </delete>
+    <delete id="deleteUserGroupJoinByUserId">
+        delete from security_user_group where user_id = #{userId}
+    </delete>
+    <delete id="deleteGroupResourceJoinByGroupId">
+        delete from security_group_resource where group_id = #{groupId}
+    </delete>
+    <delete id="deleteUserGroupJoinByGroupId">
+        delete from security_user_group where group_id = #{groupId}
+    </delete>
+    <select id="getGroupByUserJoinGroup" resultType="sunyu.demo.security.manager.pojo.SecurityGroup">
+        SELECT
+        security_group.*
+        FROM
+        security_group security_group
+        JOIN security_user_group security_user_group ON security_user_group.group_id = security_group.id
+        <where>
+            <if test="securityUser.id != null">
+                and security_user_group.user_id= #{securityUser.id}
+            </if>
+        </where>
+    </select>
+</mapper>

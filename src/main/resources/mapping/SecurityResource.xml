@@ -1,0 +1,73 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sunyu.demo.security.manager.mapper.SecurityResourceMapper">
+    <select id="getResourceByUserJoinResource" resultType="sunyu.demo.security.manager.pojo.SecurityResource">
+        SELECT
+        security_resource.*
+        FROM
+        security_user security_user
+        JOIN security_user_resource security_user_resource ON security_user.id = security_user_resource.user_id
+        JOIN security_resource security_resource ON security_resource.id = security_user_resource.resource_id
+        <where>
+            <if test="securityUser.email != null">
+                and security_user.email = #{securityUser.email}
+            </if>
+        </where>
+    </select>
+    <select id="getResourceByUserJoinRoleJoinResource"
+            resultType="sunyu.demo.security.manager.pojo.SecurityResource">
+        SELECT
+        security_resource.*
+        FROM
+        security_user security_user
+        JOIN security_user_role security_user_role ON security_user.id = security_user_role.user_id
+        JOIN security_role_resource security_role_resource ON security_role_resource.role_id =
+        security_user_role.role_id
+        JOIN security_resource security_resource ON security_resource.id = security_role_resource.resource_id
+        <where>
+            <if test="securityUser.email != null">
+                and security_user.email = #{securityUser.email}
+            </if>
+        </where>
+    </select>
+    <select id="getResourceByUserJoinGroupJoinResource"
+            resultType="sunyu.demo.security.manager.pojo.SecurityResource">
+        SELECT
+        security_resource.*
+        FROM
+        security_user security_user
+        JOIN security_user_group security_user_group ON security_user_group.user_id = security_user.id
+        JOIN security_group_resource security_group_resource ON security_group_resource.group_id =
+        security_user_group.group_id
+        JOIN security_resource security_resource ON security_resource.id = security_group_resource.resource_id
+        <where>
+            <if test="securityUser.email != null">
+                and security_user.email = #{securityUser.email}
+            </if>
+        </where>
+    </select>
+    <select id="getResourceByRoleJoinResource" resultType="sunyu.demo.security.manager.pojo.SecurityResource">
+        SELECT
+        security_resource.*
+        FROM
+        security_resource security_resource
+        JOIN security_role_resource security_role_resource ON security_role_resource.resource_id = security_resource.id
+        <where>
+            <if test="securityRole.id != null">
+                and security_role_resource.role_id = #{securityRole.id}
+            </if>
+        </where>
+    </select>
+    <select id="getResourceByGroupJoinResource" resultType="sunyu.demo.security.manager.pojo.SecurityResource">
+        SELECT
+        security_resource.*
+        FROM
+        security_resource security_resource
+        JOIN security_group_resource security_group_resource ON security_group_resource.resource_id =
+        security_resource.id
+        <where>
+            <if test="securityGroup.id != null">
+                and security_group_resource.group_id = #{securityGroup.id}
+            </if>
+        </where>
+    </select>
+</mapper>
