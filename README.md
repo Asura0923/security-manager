@@ -25,11 +25,12 @@
 2. 在当前目录打开 `CMD` 执行 `install.bat` 或者直接执行语句 `mvn clean install -U -e`
 
 # 启动配置
-1. 默认不需要任何配置，直接启动项目即可，可以自定义启动端口
+1. 默认不需要任何配置，直接启动项目即可，可以自定义启动端口，不加端口配置，默认使用 `8080`
 
     ``` java -jar secuity-manager-1.0.0.jar ```
     
     ``` java -jar security-manager-1.0.0.jar --server.port=10000 ```
+2. 浏览器访问 `http://localhost:8080` 进入登录页面，首次登录使用 `89333367@qq.com` 密码 `1` 进行登录
     
 2. 如果使用 mysql 数据库，配置方法如下
     1. 修改application.properties里的datasource部分配置，注释掉 `datasource h2` 的配置，然后开启 `datasource mysql` 的配置
