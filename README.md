@@ -20,6 +20,10 @@
 - Maven 3.x+
 - MySql 5.x (可以使用h2内存数据库)
 
+# 项目编译
+1. 下载项目，然后进入项目目录 `security-manager`
+2. 在当前目录打开 `CMD` 执行 `install.bat` 或者直接执行语句 `mvn clean install -U -e`
+
 # 启动配置
 1. 默认不需要任何配置，直接启动项目即可，可以自定义启动端口
 
