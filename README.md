@@ -30,9 +30,10 @@
     ``` java -jar secuity-manager-1.0.0.jar ```
     
     ``` java -jar security-manager-1.0.0.jar --server.port=10000 ```
+    
 2. 浏览器访问 `http://localhost:8080` 进入登录页面，首次登录使用 `89333367@qq.com` 密码 `1` 进行登录
     
-2. 如果使用 mysql 数据库，配置方法如下
+3. 如果使用 mysql 数据库，配置方法如下
     1. 修改application.properties里的datasource部分配置，注释掉 `datasource h2` 的配置，然后开启 `datasource mysql` 的配置
     2. 将 `mysql-schema.sql` 文件内容，在mysql中执行，进行表和数据的初始化；也可以直接更改 `spring.datasource.initialization-mode` 的属性值为 `always` ，但注意第二次启动项目时要改回原值，否则数据库会被清空
     3. 修改 `spring.datasource.url` `spring.datasource.username` `spring.datasource.password` 三处的配置为你自己mysql的配置
