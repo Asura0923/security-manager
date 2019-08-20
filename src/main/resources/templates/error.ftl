@@ -4,7 +4,7 @@
 <head>
     <@head title="Security Manager | Error"/>
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="sidebar-mini skin-black">
 <section class="content">
     <div class="error-page">
         <h2 class="headline text-red">${status!}</h2>

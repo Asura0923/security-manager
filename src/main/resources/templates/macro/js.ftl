@@ -50,9 +50,9 @@
 <script src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
 
 <!-- AdminLTE App -->
-<script src="https://cdn.bootcss.com/admin-lte/2.4.15/js/adminlte.min.js"></script>
+<script src="https://cdn.bootcss.com/admin-lte/2.4.17/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="https://cdn.bootcss.com/admin-lte/2.4.15/js/demo.js"></script>
+<script src="https://cdn.bootcss.com/admin-lte/2.4.17/js/demo.js"></script>
 
 <!-- app js -->
 <script src="${request.contextPath}/js/status.js?v=1.0.0"></script>

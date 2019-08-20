@@ -4,7 +4,7 @@
 <head>
     <@head title="Security Manager | Login"/>
 </head>
-<body class="hold-transition">
+<body class="sidebar-mini skin-black">
 <div class="login-box">
     <div class="login-logo">
         <b>Security</b>Manager

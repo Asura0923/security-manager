@@ -6,7 +6,7 @@
 <head>
     <@head title="Security Manager | User"/>
 </head>
-<body class="hold-transition sidebar-mini">
+<body class="sidebar-mini skin-black">
 <div class="wrapper">
     <#include "../macro/navbar.ftl"/>
 

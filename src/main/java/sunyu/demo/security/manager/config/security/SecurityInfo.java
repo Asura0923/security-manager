@@ -14,6 +14,7 @@ import java.util.List;
  * @author SunYu
  */
 public class SecurityInfo extends User {
+    private static final long serialVersionUID = 1L;
     // user info
     private SecurityUser securityUser;
     // user menu info

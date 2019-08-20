@@ -42,8 +42,8 @@
     <link rel="stylesheet" type="text/css" href="${request.contextPath}/css/css.css">
 
     <!-- Theme style -->
-    <link href="https://cdn.bootcss.com/admin-lte/2.4.15/css/AdminLTE.min.css" rel="stylesheet">
-    <link href="https://cdn.bootcss.com/admin-lte/2.4.15/css/skins/_all-skins.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/admin-lte/2.4.17/css/AdminLTE.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/admin-lte/2.4.17/css/skins/_all-skins.min.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
